@@ -35,7 +35,7 @@ class Test:
         # Power Television Off and Mute
         self.tv1.power()
         self.tv1.mute()
-        assert self.tv1.__str__() == 'Power = False, Channel = 0, Volume = 0'
+        assert self.tv1.__str__() == 'Power = False, Channel = 0, Volume = 1'
         # Power Television On and Mute
         self.tv1.power()
         self.tv1.mute()

@@ -19,7 +19,6 @@ class Television:
         Method to toggle the power status of a television Object
         """
         self.__status ^= True
-        self.CURRENT_VOLUME, self.__volume = self.__volume, self.CURRENT_VOLUME
 
 
     def mute(self) -> None:
