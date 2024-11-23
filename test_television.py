@@ -5,11 +5,9 @@ class Test:
 
     def setup_method(self):
         self.tv1 = Television()
-        self.tv2 = Television()
 
     def teardown_method(self):
         del self.tv1
-        del self.tv2
 
     def test_init(self):
         assert self.tv1.__str__() == 'Power = False, Channel = 0, Volume = 0'
@@ -32,15 +30,16 @@ class Test:
         self.tv1.mute()
         assert self.tv1.__str__() == 'Power = True, Channel = 0, Volume = 0'
         # Unmute Television
+        self.tv1.mute()
         assert self.tv1.__str__() == 'Power = True, Channel = 0, Volume = 1'
         # Power Television Off and Mute
         self.tv1.power()
         self.tv1.mute()
-        assert self.tv1.__str__() == 'Power = False, Channel = 0, Volume = 1'
+        assert self.tv1.__str__() == 'Power = False, Channel = 0, Volume = 0'
         # Power Television On and Unmute
         self.tv1.power()
         self.tv1.mute()
-        assert self.tv1.__str__() == 'Power = True, Channel = 0, Volume = 1'
+        assert self.tv1.__str__() == 'Power = True, Channel = 0, Volume = 0'
 
 
 
